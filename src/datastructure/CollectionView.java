@@ -2,7 +2,7 @@ package datastructure;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 
 public class CollectionView {
 
