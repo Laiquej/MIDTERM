@@ -15,7 +15,7 @@ public class Factorial {
         System.out.println("Factorial Recursion(8): " + factorialRecursion(8));
 
     }
-        public static long factorialRecursion1(int n) {
+         public static long factorialRecursion1(int n) {
             if (n <= 0) {
                 return 0;
             } else if (n == 1) {

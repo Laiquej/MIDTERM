@@ -10,7 +10,7 @@ public class Pattern {
 		 *
 		 *
 		 */
-		Scanner in = new Scanner(System.in);
+		 Scanner in = new Scanner(System.in);
 		System.out.println("Enter starting number: ");
 		int n = in.nextInt();
 		int i = 0, dec = 1;

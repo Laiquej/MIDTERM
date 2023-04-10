@@ -48,7 +48,7 @@ public class PrimeNumber {
 		printValue(connectToSqlDB.readDataBase("primes", "PrimeNumber"));
 	}
 
-	private static void printValue(List<String> array) {
+	 private static void printValue(List<String> array) {
 		for (String st : array) {
 			System.out.println(st);
 		}

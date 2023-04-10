@@ -9,7 +9,7 @@ public class Fibonacci {
 
 
     }
-    public static int[] fibonacci(int n) {
+     public static int[] fibonacci(int n) {
         int fib[] = new int[n];
         int f1 = 0, f2 = 1, tmp;
         for (int i = 0; i < n; i++) {

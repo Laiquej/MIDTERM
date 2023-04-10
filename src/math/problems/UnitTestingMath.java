@@ -1,7 +1,7 @@
 package math.problems;
 import org.junit.Assert;
 public class UnitTestingMath {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         //Apply Unit testing into each classes and methods in this package.
         Assert.assertEquals(Factorial.factorialIteration(5), 120);
         Assert.assertEquals(Factorial.factorialRecursion(5), 120);

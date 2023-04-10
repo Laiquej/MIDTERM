@@ -13,7 +13,7 @@ public class FindLowestDifference {
         return min;
     }
 
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         /*
          Implement in java.
          Read this below two array. Find the lowest difference between the two array cell.
