@@ -1,34 +1,147 @@
 Please answer the below Data Structure Questions:
 
+Please answer the below Data Structure Questions:
+
 why do we need data structure?
 A.
-
+A collection which is used to store, organize and manipulate different type of data
 
 What are the various operations that can be performed on different Data Structures?
+A.
+add, remove, update, access, find size, toString
+
 List out the areas in which data structures are applied extensively?
+A.
+Data structures are applied everywhere in life from organizing, and storing data
+in hospitals, school or even at work with employees
+
 what is an Array?
+A.
+A data structure with fixed size, can hold elements of same type within it.
+
 what is the difference between the Array and ArrayList?
+A.
+Array has a fixed size, ArrayList has dynamic size which can grow or shrink depending on our needs
+also Array can hold objects or primative types not like ArrayList which hold only objects
+
 what is LinkedList?
+A.
+A dynamic data structure which can size can change increase or decrease. it store
+the data as group of nodes linked together where each node point to another node
+
 How is an Array different from Linked List?
+A.
+Array is fixed size, LinkedList is dynamic size
+Array can work with primative types or objects, LinkedList work with objects only
+Array store data in contigues memory, LinkedList store data randomly
+
 what is queue?
+A.
+a first in first out data structure where the elements added first removed first, like a line at cashier
+
 what is stack?
+A.
+A last in first out data structure where the elements added last removed first, can be useful
+with converting postfix notation to infix notation, also with solving math equations.
+
 what is FIFO and LIFO?
+A.
+FIFO: first in first out which can be applied with queue
+LIFO: last in first out which can be applied with stack
+
 what is the order of complexity?
+A.
+The time needed for algorithm to perform it's task depending on input size
+
 what is the best case to search an element from an array?
+A.
+if the element was at index 0 so it would be first match which in this case O(1)
+
 what is the worst case to search an element from an array?
+A.
+the element was at last index at array or not found in this case the complexity would be O(n)
+
 what is tree in data structure?
+A.
+a non linear data structure consist of hierarchical relationship it have a root and nodes
+
 what is graph in data structure?
+A.
+a non linear data structure consist of vertices and edges
+consider a network of people on facebook the people are the entity (vertix)
+and the relationship between people are the edges.
+
 what is the difference between the HashTable and HashMap?
+A.
+HashTable is synchronized, HahMap is non synchronized
+HashTable doesn't allow for null key/value, HashMap allow for one null key many null values
+HashMap is faster then HashTable
+HashTable use Iterator or Enumerator for traversal, HashMap use only Iterator
+
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
+A.
+for RDBMS best answer is Array or ArrayList
+Network data model must be graph
+hierarchical data model must use Trees like BST or AVL Tree
+
 How HashMap works in java?
+A.
+HashMap is a Key/Value data structure where Key must be unique and not repeated
+it has an inner class Node to hold key/value and use linked list to group data together
+
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
+A.
+a runtime exception which occur which using an index that is not within valid range of array size
+could be less than 0, greater or equal to array size
+
 What are the different ways of copying an array into another array?
+A.
+you can copy array by
+1. create new array with same size then copy elements
+2. using clone
+3. use assignment operator but it has side effect it will create alias
+4. arraycopy method in System class
+5. using copyof method in Arrays class
+
 What is difference between an array and a linked list?
+A.
+Array is fixed size, LinkedList is dynamic size
+Array can work with primative types or objects, LinkedList work with objects only
+Array store data in contigues memory, LinkedList store data randomly
+
 What is DFS and BFS?
+A.
+DFS: depth first search where nodes explored from root to farest possible node first then start going back to explore missing paths
+BFS: breadth first search where all nodes at same level explored first before going to enxt level
+
 What is Recursion?
+A.
+a technique where function keep calling itself until it reach it's stop condition then it start
+going back and perform it's task recursivly
+
 What are linear and non linear data Structures?
+A.
+linear data structure means that elements are sequentially connected and all on same level
+also that it is traversable through single run like linked list or array list
+nonlinear means that elements are hierarchically connected which means it's not on same level
+like a BST or AVL Tree
+
 What is Big-(O)-notation?
+A.
+a mathematical notation used to describe the time complexity of algorithms
+
+
 Outlined different kind of sorting algorithm with time complexity?
+A.
+InsertionSort O(n^2)
+SelectionSort O(n^2)
+BubbleSort O(n^2)
+QuickSort O(nlogn)
+MergeSort O(nlogn)
+BucketSort O(n+k) where k is number of buckets
+RadixSort O(nk) where k is number of digits in largest number
+ShellSort O(nlogn)
+
 
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
@@ -36,4 +149,13 @@ Draw a table with time complexity in which it will summarize all the data struct
   c)In terms of Searching element.
   d)In terms of Removing element.
 
-
+A.
+                access          insert          search          remove
+                best-worst      best-worst      best-worst      best-worst
+Array           O(1)-O(1)       O(1)-O(n)       O(1)-O(n)       O(1)-O(n)
+ArrayList       O(1)-O(1)       O(1)-O(n)       O(1)-O(n)       O(1)-O(n)
+LinkedList      O(n)-O(n)       O(1)-O(1)       O(n)-O(n)       O(1)-O(1)
+Stack           O(n)-O(n)       O(1)-O(1)       O(n)-O(n)       O(1)-O(1)
+Queue           O(n)-O(n)       O(1)-O(1)       O(n)-O(n)       O(1)-O(1)
+BST             O(logn)-O(n)    O(logn)-O(n)    O(logn)-O(n)    O(logn)-O(n)
+Hashing         O(1)-O(n)       O(1)-O(n)       O(1)-O(n)       O(1)-O(n)
