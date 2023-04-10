@@ -13,7 +13,7 @@ public class Sort {
         final long startTime = System.currentTimeMillis();
         int [] list = array;
 
-        for(int j=0; j<array.length-1; j++){
+         for(int j=0; j<array.length-1; j++){
             int min = j;
             for(int i=j+1; i<array.length; i++) {
                 if (array[i] < array[min])
@@ -25,7 +25,7 @@ public class Sort {
             array[j] = temp;
         }
 
-        final long endTime = System.currentTimeMillis();
+         final long endTime = System.currentTimeMillis();
         final long executionTime = endTime - startTime;
         this.executionTime = executionTime;
         return list;

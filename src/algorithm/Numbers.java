@@ -118,10 +118,10 @@ public class Numbers {
 			minTime = heapSortExecutionTime;
 			minAlgo = "Heap Sort";
 		}
-		System.out.println("\n\nBest sorting algorithm is " + minAlgo + " with time " + minTime);
+		 System.out.println("\n\nBest sorting algorithm is " + minAlgo + " with time " + minTime);
 	}
 
-	public static void storeRandomNumbers(int[] num) {
+	 public static void storeRandomNumbers(int[] num) {
 		Random rand = new Random();
 		for (int i = 0; i < num.length; i++) {
 			num[i] = rand.nextInt(1000000);
