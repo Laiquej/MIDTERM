@@ -1,5 +1,7 @@
 package databases;
 
+import design.Employee;
+import design.EmployeeInfo;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -181,6 +183,23 @@ public class ConnectToSqlDB {
         }
     }
 
+    public void insertDataFromEmployeeToSqlTable(Employee emp, String tableName) {
+        try {
+            connectToSqlDatabase();
+            ps = connect.prepareStatement("INSERT INTO " + tableName + " VALUES(?, ?, ?)");
+            ps.setString(1, "" + emp.getId());
+            ps.setString(2, emp.getName());
+            ps.setString(3, emp.getDepartment());
+            ps.executeUpdate();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     public List<String> directDatabaseQueryExecute(String passQuery, String dataColumn) throws Exception {
         List<String> data = new ArrayList<String>();
 
@@ -196,7 +215,6 @@ public class ConnectToSqlDB {
         }
         return data;
     }
-
 
     public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2) {
         try {
@@ -215,7 +233,7 @@ public class ConnectToSqlDB {
         }
     }
 
-    public static List<User> readUserProfileFromSqlTable() throws IOException, SQLException, ClassNotFoundException {
+    public List<User> readUserProfileFromSqlTable() throws IOException, SQLException, ClassNotFoundException {
         List<User> list = new ArrayList<User>();
         User user = null;
         try {
@@ -243,6 +261,34 @@ public class ConnectToSqlDB {
         return list;
     }
 
+    public List<Employee> readEmployeeProfileFromSqlTable() throws IOException, SQLException, ClassNotFoundException {
+        List<Employee> list = new ArrayList<Employee>();
+        Employee emp = null;
+        try {
+            Connection conn = connectToSqlDatabase();
+            String query = "SELECT * FROM Employees";
+            // create the java statement
+            Statement st = conn.createStatement();
+            // execute the query, and get a java resultset
+            ResultSet rs = st.executeQuery(query);
+            // iterate through the java resultset
+            while (rs.next()) {
+                String name = rs.getString("Name");
+                String id = rs.getString("Id");
+                String department = rs.getString("Department");
+                //System.out.format("%s, %s\n", name, id);
+                emp = new EmployeeInfo(Integer.parseInt(id), name, department);
+                list.add(emp);
+
+            }
+            st.close();
+        } catch (Exception e) {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+        return list;
+    }
+
     public static void main(String[] args) throws Exception {
         //read students and insert to database
         ConnectToSqlDB db = new ConnectToSqlDB();
@@ -259,7 +305,7 @@ public class ConnectToSqlDB {
 
         //insert to database
         System.out.println("Retrieve students from database:");
-        List<User> students = readUserProfileFromSqlTable();
+        List<User> students = db.readUserProfileFromSqlTable();
         for (User user : students) {
             System.out.println("Name: " + user.getStName() + ", ID: " + user.getStID() + ", DOB: " + user.getStDOB());
         }
